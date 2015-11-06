@@ -46,7 +46,7 @@ ul {
 #homePage {
     background:url(imgs/home/1.jpg) 0 0 no-repeat;
     background-size:contain;
-    display:block;
+    display:none;
 }
 
 #homePageHead {
@@ -123,11 +123,11 @@ ul {
 #girlAndNet .runnningGirl {
     margin-left:9%;
     /*animation:aRuningGirl 3s cubic-bezier(.15,.93,.9,.08) infinite alternate;*/
-    animation:aRuningGirl 2s linear infinite alternate;
+    animation:aRuningGirl 1s linear infinite alternate;
 }
 @keyframes aRuningGirl {
     100% {
-        transform:translateY(1em);
+        transform:translateY(0.5em);
     }
 }
 #girlAndNet .net {
@@ -156,7 +156,7 @@ ul {
 
 .progress-bar {
    width:1%;
-  background-color: #86e01e;
+  background-color: #0C6EB7;
   position: relative;
   height: 16px;
   border-radius: 4px;
@@ -201,31 +201,63 @@ ul {
   background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
 }
+/**进度条end **/
 
-
-/**进度条结束 **/
 
 #loadingTips {
-    height:20%;
+    height:30%;
     margin-top:5%;
     overflow:hidden;
+    text-align:center;
 }
 
 #loadingTips .scrollTipsCon {
     width:200%;  
     animation:aScrollTips 8.4s ease-in-out  infinite;
 }
-#loadingTips .scrollTipsCon img {
-    margin-left:100%;
+#loadingTips img {
+    /*margin-left:100%;*/
 }
+#loadingTips img:nth-child(1) {
+    animation:aScrollTips 2s linear  infinite;
+    opacity:1;
+}
+
 @keyframes aScrollTips {
-    to {
-        transform:translateX(-200%);
+    0% {
+        opacity:0;
+        transform:translateY(100%);
+    }
+    23% {  transform:translateY(0);opacity:1}
+    33% {  transform:translateY(0%);}
+    56% { transform:translateY(0%);}
+    66% {  transform:translateY(0%);}
+    90% {  transform:translateY(-200%);}
+    100% {
+        transform:translateY(-200%);
+        opacity:0;
     }
 }
-/*#loadingTips img {
-    max-width:40%;
-}*/
+
+/**游戏页**/
+#gamePage {
+    background:url(imgs/game/1.jpg) 0 0 no-repeat;
+    background-size:contain;
+    display:block;
+}
+
+#horizontal {
+    width:25%;
+    height:30%
+}
+#vertical {
+    width:100%;
+    height:100%
+}
+#person {
+    max-width:100%;
+}
+
 
 
 
