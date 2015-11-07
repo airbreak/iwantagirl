@@ -46,7 +46,7 @@ ul {
 #homePage {
     background:url(imgs/home/1.jpg) 0 0 no-repeat;
     background-size:contain;
-    display:none;
+    display:block;
 }
 
 #homePageHead {
@@ -98,7 +98,7 @@ ul {
 #loadingPage {
     background:url(imgs/loading/1.jpg) 0 0 no-repeat;
     background-size:contain;
-    display:none;
+    /*display:none;*/
 }
 
 #loadingPageContent{
@@ -108,7 +108,7 @@ ul {
     margin-top:46%;
 }
 #loadingPageContent .smallItem {
-    height:44%; 
+    height:50%; 
 }
 #loadingPageContent .normatItem {
     height:8%;
@@ -127,7 +127,7 @@ ul {
 }
 @keyframes aRuningGirl {
     100% {
-        transform:translateY(0.5em);
+        transform:translateY(0.4em);
     }
 }
 #girlAndNet .net {
@@ -243,22 +243,45 @@ ul {
 #gamePage {
     background:url(imgs/game/1.jpg) 0 0 no-repeat;
     background-size:contain;
-    display:block;
+    display:none;
 }
 
 #horizontal {
-    width:25%;
-    height:30%
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width:20%;
+    height:22%;
+    animation: aHorizontal 1.08s ease-in-out 0s infinite alternate;
 }
 #vertical {
+    position: absolute;
+    left: 0px;
+    top: 0px;
     width:100%;
-    height:100%
+    height:100%;
+    animation: aVertical 2.05s ease-in 0s infinite alternate;
 }
 #person {
     max-width:100%;
+    animation: aPerson .905s linear 0s infinite;
+}
+@keyframes aHorizontal {
+  0% {left: 0px;}
+  100% {left: 80%;}
+}
+
+@keyframes aVertical {
+  0% {top: 0px;}
+  100% {top: 400%;}
 }
 
 
+@keyframes aPerson {
+  100% {
+      transform:rotate(360deg);
+  }
+}
 
 
 /*************响应式处理****************/

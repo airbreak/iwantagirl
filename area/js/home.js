@@ -3,21 +3,28 @@
 });
 var Igirl = function ($wrapper) {
     this.$wrapper = $wrapper;
-    this.$wrapper.on('click', '#genderBtns img', $.proxy(this, 'startGame'));
+    this.$wrapper.on('click', '#genderBtns img', $.proxy(this, 'selectGender'));
+    var that = this;
+    this.$wrapper.on('click', '#person', function () {
+        console.log(that.catchType);
+        that.$wrapper.find('#homePage').show().siblings().hide();
+    });
     this.tipsInterval = null;
-    this.gender = null;  //性别
+    this.catchType = 'girl';  //性别
     $('.btn').on('touchstart', function () { });
 };
 
 Igirl.prototype = {
-    startGame: function (e) {
+    selectGender: function (e) {
         var $target = $(e.currentTarget),
-            index = $target.index();
-        if (index == 0) { }
-
-        else {
-
+            index = $target.index(),
+            url = 'imgs/game/3.png'
+           
+        if (index == 1) {
+            url = 'imgs/game/2.png';
+            this.catchType = 'boy';  //性别
         }
+        this.$wrapper.find('#person').attr('src', url);
         this.loadingGame();
     },
 
