@@ -70,7 +70,9 @@ ul {
     left:100%;
     top:14%;
     /*animation:aAirPlane 2s cubic-bezier(.15,.93,.9,.08);*/
-    animation:aAirPlane 2s ease-in;
+}
+#homePage.active #airPlane {
+    animation:aAirPlane 2s ease-in;    
     animation-fill-mode:forwards;
 }
 
@@ -120,7 +122,7 @@ ul {
 #girlAndNet img {
     max-width:30%;
 }
-#girlAndNet .runnningGirl {
+#loadingPage.active .runnningGirl {
     margin-left:9%;
     /*animation:aRuningGirl 3s cubic-bezier(.15,.93,.9,.08) infinite alternate;*/
     animation:aRuningGirl 1s linear infinite alternate;
@@ -154,7 +156,7 @@ ul {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
 }
 
-.progress-bar {
+#loadingPage.active .progress-bar {
    width:1%;
   background-color: #0C6EB7;
   position: relative;
@@ -170,7 +172,7 @@ ul {
   transition-property: width, background-color;
   -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
-  animation:addProgressBar 7s ease-out;
+  animation:addProgressBar 3s ease-out;
   animation-fill-mode:forwards;
 }
 @keyframes addProgressBar {
@@ -210,15 +212,7 @@ ul {
     overflow:hidden;
     text-align:center;
 }
-
-#loadingTips .scrollTipsCon {
-    width:200%;  
-    animation:aScrollTips 8.4s ease-in-out  infinite;
-}
-#loadingTips img {
-    /*margin-left:100%;*/
-}
-#loadingTips img:nth-child(1) {
+#loadingPage.active #loadingTips img:nth-child(1) {
     animation:aScrollTips 2s linear  infinite;
     opacity:1;
 }
@@ -246,26 +240,35 @@ ul {
     display:none;
 }
 
-#horizontal {
+.horizontal {
     position: absolute;
     left: 0px;
     top: 0px;
     width:20%;
     height:22%;
-    animation: aHorizontal 1.08s ease-in-out 0s infinite alternate;
+   
 }
-#vertical {
+#gamePage.active .horizontal {
+     animation: aHorizontal 1.08s ease-in-out 0s infinite alternate;
+}
+.vertical {
     position: absolute;
     left: 0px;
     top: 0px;
     width:100%;
     height:100%;
+
+}
+#gamePage.active .vertical {
     animation: aVertical 2.05s ease-in 0s infinite alternate;
 }
-#person {
+.person {
     max-width:100%;
+}
+#gamePage.active .person {
     animation: aPerson .905s linear 0s infinite;
 }
+
 @keyframes aHorizontal {
   0% {left: 0px;}
   100% {left: 80%;}
@@ -281,6 +284,61 @@ ul {
   100% {
       transform:rotate(360deg);
   }
+}
+
+
+#hisihiDictionary {
+    position:absolute;
+    bottom:4%;
+    right:8%;
+    width:20%;
+}
+
+#hisihiLogoH {
+    position:absolute;
+    top:4%;
+    right:3%;
+    width:28%;
+    height:22%;
+}
+
+#hisihiLogoV {
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+#gamePage.active #hisihiLogoH {
+     animation: aHorizontal 3.08s ease-in-out 0s infinite alternate;
+}
+@keyframes aHisihiLogoH {
+      0% {right: 0px;}
+      100% {left: 80%;}
+}
+
+#gamePage.active #hisihiLogoV {
+     animation: aHisihiLogoV 4.08s ease-in-out 0s infinite alternate;
+}
+@keyframes aHisihiLogoV {
+        0% {top: 0px;}
+    100% {top: 400%;}
+}
+
+#hisihiDictionaryCon {
+    background:url(imgs/game/9.jpg) 0 0 no-repeat;
+    background-size:contain;
+    display:none;
+    z-index:100;
+    background-color:#F4DED1;
+}
+#useDictionaryBtn {
+    width:100%;
+    position:absolute;
+    top:65%;
+    height:20%;
+    text-align:center;
+}
+#useDictionaryBtn img{
+    max-width:30%;
 }
 
 
