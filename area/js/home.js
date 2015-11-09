@@ -5,7 +5,7 @@ var Igirl = function ($wrapper) {
     this.$wrapper = $wrapper;
     this.tipsInterval = null;
     this.catchType = 'girl';  //性别
-    //this.loadingGame();
+    this.loadingGame();
 
     var that = this;
     this.$wrapper.on('click', '#genderBtns img', $.proxy(this, 'selectGender'));
@@ -81,7 +81,11 @@ Igirl.prototype = {
 
     /*开始游戏*/
     startGame: function () {
-        this.$wrapper.find('#gamePage').addClass('active').show().siblings().removeClass('active').hide();
+        var that = this;
+        this.$wrapper.find('#gameDesciption').addClass('active').show().siblings().removeClass('active').hide();
+        window.setTimeout(function () {
+            that.$wrapper.find('#gamePage').addClass('active').show().siblings().removeClass('active').hide();
+        },7050);
     },
 
     /*更换提示背景图*/
