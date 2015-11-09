@@ -11,18 +11,7 @@
 <body>
 
     <div id="wrapper">
-        <div id="homePage" class="pageItem">
-            <div id="homePageHead">
-                <img src="imgs/home/3.png" class="btn audioControl" />
-            </div>
-            <div id="homePageBottom">
-                <div id="airPlane"><img src="imgs/home/2.png" /></div>
-                <div id="genderBtns">
-                    <img src="imgs/home/4.png" class="btn" />
-                    <img src="imgs/home/5.png" class="btn" />
-                </div>
-            </div>
-        </div>
+        <!--游戏加载-->
         <div id="loadingPage" class="pageItem">
             <div id="loadingPageContent">
                 <div class="smallItem" id="girlAndNet">
@@ -43,6 +32,34 @@
                 </div>
             </div>
         </div>
+        <!--游戏性别选择-->
+        <div id="homePage" class="pageItem">
+            <div id="homePageHead">
+                <img src="imgs/home/3.png" class="btn audioControl" />
+            </div>
+            <div id="homePageBottom">
+                <div id="airPlane"><img src="imgs/home/2.png" /></div>
+                <div id="genderBtns">
+                    <img src="imgs/home/4.png" class="btn" />
+                    <img src="imgs/home/5.png" class="btn" />
+                </div>
+            </div>
+        </div>
+
+        <!--游戏介绍-->
+        <div id="gameDesciption" class="pageItem active">
+            <div class="gameDesciptionItem">
+                <img src="imgs/gamedescription/2.png" />
+            </div>
+            <div class="gameDesciptionItem">
+                <img src="imgs/gamedescription/3.png" />
+            </div>
+            <div class="gameDesciptionItem">
+                <img src="imgs/gamedescription/4.png" />
+            </div>
+        </div>
+
+        <!--游戏页面-->
         <div id="gamePage" class="pageItem">
             <!--人物-->
             <div class="horizontal">
@@ -58,17 +75,58 @@
             <div id="hisihiDictionaryCon" class="pageItem">
                 <div id="useDictionaryBtn">
                     <img src="imgs/game/8.png" class="btn" />
+                    <div class="errorInfo">你已经使用过宝典了</div>
                 </div>
             </div>
             <!--logo-->
             <div id="hisihiLogoH">
                 <div id="hisihiLogoV">
-                       <img src="imgs/game/4.png" />
+                    <img src="imgs/game/4.png" />
                 </div>
             </div>
         </div>
-        <script src="js/jquery-1.8.2.min.js"></script>
-        <script src="js/prefixfree.min.js"></script>
-        <script src="js/home.js"></script>
+        <!--游戏结束-->
+        <div id="resultPage" class="pageItem">
+            <div class="resultContainer">
+                <div class="imgContainer">
+                    <img src="imgs/gameover/7.jpg" />
+                </div>
+                <div class="resultInfoItem nameAndLevel">
+                    <span class="namesContainer">
+                        <span>&diams;</span>
+                        <span class="nameFiled"></span>
+                        <span>&diams;</span>
+                    </span>
+                    <img src="" class="level" />
+                </div>
+                <div class="resultInfoItem">
+                    <span class="hAndwIconCon">
+                        <img src="imgs/gameover/h.png" class="hAndwIncon" />
+                        <span class="hInfo"></span>
+                    </span>
+                    <span class="hAndwIconCon">
+                        <img src="imgs/gameover/h.png" class="hAndwIncon" />
+                        <span class="wInfo"></span>
+                    </span>
+                </div>
+                <div class="resultInfoItem description">
+                    <p></p>
+                </div>
+                <div class="resultInfoItem shareAndGiveUpBtns">
+                    <img src="imgs/gameover/share.png" />
+                    <img src="imgs/gameover/giveup.png" />
+                </div>
+            </div>
+
+            <div id="downloadCon">
+                <img src="imgs/gameover/2.png" class="allDownImg" />
+                <img src="imgs/gameover/3.png" class="btn downBtn" />
+            </div>
+        </div>
+        <div id="shareTips" class="pageItem"></div>
+    </div>
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/home.js"></script>
 </body>
 </html>
