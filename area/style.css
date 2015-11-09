@@ -20,9 +20,18 @@ ul {
     padding: 0;
 }
 
-    ul li {
-        list-style: none;
-    }
+ul li {
+    list-style: none;
+}
+#noAttentionImg {
+    margin: 0;
+    padding: 0;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    position: absolute;
+    top: -350px;
+}
 
 #wrapper {
     background-color:#F4DED1;
@@ -266,29 +275,21 @@ ul {
     animation-delay:0ms;
 }
 @keyframes aDescript1 {
-    90% {
-        left:0;
-    }
-    98% {
-        left:3%;
-        /*transform:scaleX(0.8);*/
-    }
     100% {
         /*transform:scaleX(1);*/
         left:0;
     }
 }
 #gameDesciption.active .gameDesciptionItem:nth-child(2) {
-    animation:aDescript1 2s linear;
+    animation:aDescript1 2s cubic-bezier(1,-0.39,.36,1.44);
     animation-fill-mode:forwards;
     animation-delay:2500ms;
 }
 #gameDesciption.active .gameDesciptionItem:nth-child(3) {
-    animation:aDescript1 2s linear;
+    animation:aDescript1 2s cubic-bezier(1,-0.39,.36,1.44);
     animation-fill-mode:forwards;
     animation-delay:4500ms;
 }
-
 
 
 /**游戏页**/
@@ -307,7 +308,9 @@ ul {
    
 }
 #gamePage.active .horizontal {
-     animation: aHorizontal 1.08s ease-in-out 0s infinite alternate;
+     transform: translate3d(0, 0, 0);
+     /*animation: aHorizontal 0.20s ease-in-out 0s infinite alternate;*/
+     animation: aHorizontal 1.20s ease-in-out 0s infinite alternate;
 }
 .vertical {
     position: absolute;
@@ -318,13 +321,16 @@ ul {
 
 }
 #gamePage.active .vertical {
-    animation: aVertical 2.05s ease-in 0s infinite alternate;
+    transform: translate3d(0, 0, 0);
+    /*animation: aVertical 1.75s ease-in 0s infinite alternate;*/
+    animation: aVertical 2.75s ease-in 0s infinite alternate;
 }
 .person {
     max-width:100%;
 }
 #gamePage.active .person {
-    animation: aPerson .905s linear 0s infinite;
+    /*animation: aPerson .905s linear 0s infinite;*/
+
 }
 
 @keyframes aHorizontal {
@@ -340,14 +346,14 @@ ul {
 
 @keyframes aPerson {
   100% {
-      transform:rotate(360deg);
+      transform:rotate(360deg) translateZ(0);
   }
 }
 
 
 #hisihiDictionary {
     position:absolute;
-    bottom:4%;
+    top:4%;
     right:8%;
     width:20%;
 }
@@ -455,7 +461,7 @@ ul {
     margin-right:2%;
 }
 .resultInfoItem .hInfo, .resultInfoItem .wInfo {
-    font-size:0.9em;
+    font-size:0.7em;
     line-height:1.5em;
 }
 .hAndwIncon {
@@ -503,8 +509,10 @@ ul {
 #shareTips {
     background:url(imgs/gameover/shareTips.png) 0 0 no-repeat;
     background-size:cover;
+    /*background-color:*/
     display:none;
     z-index:110;
+    background-color:rgba(0,0,0,0.25);
 }
 
 /*************响应式处理****************/
